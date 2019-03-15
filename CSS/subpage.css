@@ -1,0 +1,44 @@
+.t_menu{
+    margin-top: 66px;
+}
+.t_menu>div:nth-child(1){
+    font-size: 12px;
+    line-height: 45px;
+    padding-left: 54px;
+    border-bottom: 1px solid #f1f1f1;
+}
+.t_menu>div:nth-child(1) i::before{
+    content: "\f105";
+    padding: 0 6px;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+.t_menu>div:nth-child(2){
+    height: 218px;
+    background-position: center;
+}
+.t_menu>div:nth-child(3){
+    height: 45px;
+    text-align: center;
+    font-size: 13px;
+    margin: 40px 0;
+}
+.t_menu>div:nth-child(3) a{
+    margin: 0 5px;
+    padding: 0 12px;
+    line-height: 30px;
+}
+.t_menu div a+a{
+    color: #828282;
+}
+
+
+#content, #content2{
+    padding: 80px 0;
+    background-color: #fff;
+}
+#content{
+    background: #f5f5f5;
+}
+#content2{
+    margin: 50px 6%;
+}

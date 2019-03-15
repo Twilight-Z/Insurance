@@ -1,0 +1,417 @@
+/*轮播图CSS设计*/
+.lbt{
+    width: 100%;
+    height: 600px;
+    margin-bottom: 180px;
+    overflow: hidden;
+    position: relative;
+    top: 66px;
+}
+/*轮播框*/
+.bottom{
+    width: 120px;
+    height: 24px;
+    background-color: #999;
+    border-radius: 20px;
+    padding: 0 4px;
+    margin-left: -56px;
+    opacity: 0.6;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 1;
+}
+.bottom div{
+    width: 12px;
+    height: 12px;
+    border: 1px solid #0153ba;
+    margin: 6px 8px;
+    border-radius: 50%;
+    float: left;
+    cursor: pointer;
+}
+/*左右按钮*/
+.ed li{
+    width: 70px;
+    height: 80px;
+    font-size: 80px;
+    margin-top: -38px;
+    text-align: center;
+    line-height: 70px;
+    color: #FFF;
+    background: #999;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.6;
+    z-index: 1;
+}
+.ed li.left{
+    border-radius: 0 30px 30px 0;
+    margin-left: -8px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+.ed li.right{
+    border-radius: 30px 0 0 30px;
+    margin-right: -8px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+.bottom:hover, .ed li:hover{
+    opacity: 1;
+}
+/*图片设置*/
+.tp li img{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*隐藏设置*/
+.ed, ul+ul li{
+    list-style: none;
+    display: none;
+}
+.lbt:hover .ed{
+    display: block;
+}
+.lx{
+    background-color: #0153ba;
+}
+
+
+/* image-text */
+.it_t h2{
+    font-size: 20px;
+}
+.it_t h2+p{
+    color: #bbb;
+    line-height: 26px;
+}
+
+.it_t div+div{
+    margin-top: 14px;
+}
+.it_t a{
+    padding: 0 14px;
+    font-size: 13px;
+    color: #666;
+    display: inline-block;
+}
+.it_t a:last-child{
+    margin-left: 50px;
+    border-left: 7px solid #333;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+.it_t+div{
+    margin-top: 34px;
+}
+.it_it>div, .it_t2>div{
+    width: 33.3%;
+    height: 480px;
+    padding: 0 46px 0 46px;
+    border: 1px solid #f2f2f2;
+    background: #fff;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.it_t2>div{
+    height: 320px;
+    margin-bottom: 60px;
+    padding: 40px 106px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.it_it>div+div{
+    border-left: none;
+}
+.it_it div img{
+    max-width: 100%;
+    padding: 60px 0 34px 0;
+}
+.it_it div div, .it_t2 div{
+    padding: 0 20px 60px 20px;
+}
+.it_it div h3, .it_t2 div h3{
+    line-height: 30px;
+}
+.it_it div p, .it_t2 div p{
+    max-height: 52px;
+    line-height: 26px;
+    margin-top: 13px;
+    font-size: 13px;
+    color: #999;
+    position: relative;
+    overflow: hidden;
+}
+.it_it div p::after, .it_t2 div p::after{
+    content: "···";
+	position: absolute;
+	bottom: 0;
+	right: 2px;
+	padding-left: 40px;
+	background: -webkit-linear-gradient(left,transparent,#fff 66%);
+	background: -o-linear-gradient(right,transparent,#fff 66%);
+	background: -moz-linear-gradient(right,transparent,#fff 66%);
+	background: linear-gradient(to right,transparent,#fff 66%);
+}
+.it_it div span, .it_t2 div span, .team div+div span{
+    color: #0153ba;
+    position: absolute;
+    bottom: 90px;
+}
+/* .it_t2 div span{
+    bottom: 200px;
+} */
+.it_it div span::before, .it_t2 div span::before, .c_about .ca_one a::before, .team div+div span::before{
+    content: " ";
+    width: 40px;
+    height: 1px;
+    background-color: #0153ba;
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    /* -webkit-animation-name: goBack;
+    animation-name: goBack;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-timing-function: cubic-bezier(.785, .135, .15, .86);
+    animation-timing-function: cubic-bezier(.785, .135, .15, .86); */
+}
+/* .it_it:hover div span::before{    
+    -webkit-animation-name: goBack;
+    animation-name: goBack;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-timing-function: cubic-bezier(.785, .135, .15, .86);
+    animation-timing-function: cubic-bezier(.785, .135, .15, .86);
+} */
+.it_it2>div{
+    height: 360px;
+}
+.it_it2+.it_it2 div{
+    border-top: none;
+}
+.it_it2 div i{
+    color: #868585;
+    font-style: normal;
+    line-height: 22px;
+}
+
+.it_t2 h2{
+    color: #888;
+    font-weight: 300;
+    margin: 40px 0 14px;
+}
+
+
+/* About us */
+.c_about{
+    background: url(../images/bg2.jpg) no-repeat;
+}
+.c_about>div{
+    max-width: 50%;
+}
+.c_about .ca_one{
+    height: 366px;
+    line-height: 26px;
+    padding: 60px 78px 62px;
+    background-color: #eff1f5;
+}
+.c_about .ca_one h2{
+    font-size: 20px;
+    padding-top: 20px;
+}
+.c_about .ca_one h5{
+    font-size: 13px;
+    color: #666;
+}
+.c_about .ca_one p{
+    margin-top: 30px;
+    font-size: 13px;
+    color: #999;
+}
+.c_about .ca_one a{
+    color: #555;
+    font-size: 15px;
+    margin-top: 26px;
+    line-height: 30px;
+    display: inline-block;
+    position: relative;
+}
+.c_about .ca_one a::before{
+    background-color: #555;
+    bottom: -2px;
+}
+
+
+/* team */
+.team{
+    background: url(../images/bg3.jpg) no-repeat;
+}
+.team div+div{
+    background: #eff1f5;
+    position: relative;
+}
+.team img{
+    width: 38%;
+}
+.team>div>div{
+    width: 62%;
+    padding: 80px 110px;
+}
+.team div h3{
+    font-size: 18px;
+    margin-top: 43px;
+}
+.team div h5{
+    font-size: 13px;
+    line-height: 23px;
+    color: #999;
+}
+.team div+div p{
+    margin: 28px 50px;
+    font-size: 13px;
+    line-height: 26px;
+}
+.team div+div span{
+    margin: 28px 50px;
+}
+.team div:hover h3{
+    color: #0153ba;
+}
+.team div:hover h5{
+    color: #666;
+}
+#content .team div div div{
+    top: 100%;
+    right: 0;
+    margin: 0;
+}
+#content .team div div div+div{
+    margin: -64px -64px 0 0;
+}
+
+/* content footer */
+#content footer{
+    height: 350px;
+    margin-top: 210px;
+    background: #eff1f5;
+}
+#content .f_brand{
+    width: 72%;
+    margin: 0px auto;
+    padding: 40px 50px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 23px 40px rgba(0, 0, 0, .04);
+    position: relative;
+    top: -70px
+}
+#content .f_brand img{
+    width: 18%;
+    margin-right: 12px;
+}
+#content .f_brand div,.team div div div{
+    width: 64px;
+    height: 64px;
+    margin-top: -32px;
+    text-align: center;
+    background: #0153ba;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+#content .f_brand img+div{
+    left: -50px;
+}
+#content .f_brand img+div::before, .team div div span+div::before{
+    content: "";
+    width: 0;
+    height: 0;
+    font-size: 0px;
+    margin-top: -6px;
+    margin-left: -3px;
+    border-right: 6px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    top: 50%;
+    transition: all 0.2s cubic-bezier(.785, .135, .15, .86);
+}
+#content .f_brand div+div{
+    right: -50px;
+}
+#content .f_brand div+div::before, .team div div div+div::before{
+    content: "";
+    width: 0;
+    height: 0;
+    font-size: 0px;
+    margin-top: -6px;
+    border-left: 6px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    top: 50%;
+    transition: all 0.2s cubic-bezier(.785, .135, .15, .86);
+}
+
+.f_brand+div{
+    width: 1000px;
+    /* height: 100px; */
+    margin: 60px auto;
+}
+.f_brand+div h3{
+    width: 330px;
+    height: 60px;
+    font-size: 16px;
+    float: left;
+}
+.f_brand+div p{
+    width: 330px;
+    height: 28px;
+    /* padding-right: 40px; */
+    color: #989898;
+    font-size: 13px;
+    float: left;
+}
+.f_brand+div a{
+    width: 32px;
+    /* height: 30px; */
+    margin: -20px 20px 0 0;
+    font: normal normal normal 18px/1 FontAwesome;
+    /* font-size: 16px; */
+    text-align: center;
+    line-height: 32px;
+    color: #B3B3B3;
+    border-radius: 100%;
+    float: left;
+    display: block;
+}
+.f_brand+div a::before{
+    content: "\f18a";
+}
+.f_brand+div a+a::before{
+    content: "\f1d6";
+}
+.f_brand+div a+a+a::before{
+    content: "\f1d7";
+}
+.f_brand+div a:hover{
+    color: #fff;
+    background: #5c5c5c;
+}
+
+

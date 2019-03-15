@@ -1,0 +1,13 @@
+#content div{
+    padding: 0 70px;
+}
+#content div+div{
+    margin-top: 23px;
+}
+#content img{
+    width: 210px;
+    border: 1px solid #f1f1f1;
+}
+#content img+img{
+    margin-left: 23px;
+}

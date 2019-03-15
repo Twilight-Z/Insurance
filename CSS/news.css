@@ -1,0 +1,47 @@
+.t_menu>div:nth-child(2){
+    background-image: url(../images/t_bg4.png);
+}
+
+.it_t2>div{
+    width: 32%;
+    height: 300px;
+    padding: 44px 48px;
+    border: 1px solid #f2f2f2;
+    background: #fff;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.it_t2>div+div{
+    margin-left: 2%;
+}
+.it_t2+.it_t2{
+    margin-top: 30px;
+}
+
+.it_t2 h2{
+    color: #888;
+    margin-bottom: 24px;
+}
+.it_t2 div h3{
+    height: 60px;
+    line-height: 30px;
+}
+.it_t2 div p{
+    max-height: 84px;
+    line-height: 26px;
+    margin-top: 13px;
+    font-size: 13px;
+    color: #999;
+    position: relative;
+    overflow: hidden;
+}
+
+.it_t2 div:hover {
+    border-bottom-color: #0153ba;
+    background-color: #eff1f5;
+}
+.it_t2 div:hover h3{
+    color: #0153ba;
+}

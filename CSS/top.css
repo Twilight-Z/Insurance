@@ -1,0 +1,137 @@
+/* font */
+@font-face {
+    /* font-properties */
+    font-family: FontAwesome;
+    src:url('../fonts/fontawesome-webfont.woff'),  
+    url('../fonts/fontawesome-webfont.ttf'),
+    /* url('../fonts/fontawesome-webfont.svg'), */
+    url('../fonts/fontawesome-webfont.woff2'),
+    url('../fonts/fontawesome-webfont.eot'); /* IE9 */
+}
+
+body .xz, #content .xz{
+    color: #0153ba;
+}
+
+/* 内容 */
+body>div *, nav *,body i{
+    font-family: FontAwesome;
+}
+
+#content, #content2{
+    max-width: 100%;
+    margin: 0 1.8%;
+}
+#content section{
+    max-width: 1800px;
+    margin: 80px auto 100px;
+}
+#content .i-t{
+    padding: 0 5%;
+}
+img{
+    max-width: 100%;
+}
+
+/* top */
+nav{
+    width: 100%;
+    line-height: 66px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+nav>div{
+    max-width: 1400px;
+    padding: 0 3.6%;
+    margin: 0 auto;
+    /* position: relative; */
+}
+nav div>a, nav div>i{
+    color: #666;
+    padding: 0 26px;
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+}
+nav a:hover{
+    color: #0153ba;
+    border-bottom: 1px solid #0153ba;
+}
+nav a i::before{
+    content: "\f107";
+    font: normal normal normal 14px/1 FontAwesome;
+}
+nav div>i{
+    /* content: "\e623";
+    font-family: mofont;
+    font: normal normal normal 14px/1 FontAwesome; */
+    margin: 22px 0 0 26px;
+    padding: 10px 11px;
+    background: url(../images/icon_ss.png) no-repeat;
+    cursor: pointer;
+}
+
+
+/* footer */
+body>footer{
+    font-size: 12px;
+    color: #666;
+    padding: 10px 0;
+    line-height: 24px;
+    text-align: center;
+}
+
+
+
+/* sidebar */
+.sidebar a{
+    width: 40px;
+    text-align: center;
+    color: #666;
+    font: normal normal normal 18px/1 FontAwesome;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    /* display: inline-block; */
+    position: fixed;
+    right: 2px;
+    z-index: 4;
+}
+.sidebar a+a{
+    border-top: 0px;
+}
+.sidebar a:hover{
+    color: #fff;
+    border-color: #0153ba;
+    background-color: #0153ba;
+}
+.btn_feedback::before{
+    line-height: 40px;
+    content: "\f18a";
+}
+.btn_player::before{
+    font-size: 24px;
+    line-height: 40px;
+    content: "\f10b";
+}
+.btn_top::before{
+    font-size: 24px;
+    line-height: 40px;
+    content: "\f106";
+}
+.btn_player{
+    bottom: 81px;
+}
+.btn_feedback{
+    bottom: 122px;
+}
+.btn_top{
+    bottom: 40px;
+    display: none;
+}
+
+
+.it_t a:hover, .t_menu a:hover{
+    color: #0153ba;
+}

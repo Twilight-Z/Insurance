@@ -1,0 +1,40 @@
+.t_menu > div:nth-child(2){
+    height: 100%;
+    margin: 90px 0;
+}
+.t_menu div h2{
+    line-height: 30px;
+}
+.t_menu div p{
+    color: #bbb;
+    line-height: 24px;
+}
+
+div ul{
+    width: 1264px;
+    margin: 0 auto 100px;
+    padding: 50px 100px 80px;
+    border: 1px dotted rgba(170, 170, 170, 0.2);
+    border-left: none;
+    border-right: none;
+}
+div ul li{
+    width: 320px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #666;
+}
+div ul li+li{
+    margin-left: 50px;
+}
+div ul li h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+}
+div ul li span{
+    font-size: 12px;
+    color: rgb(127, 127, 127);
+    margin-bottom: 24px;
+    display: inline-block;
+}

@@ -1,0 +1,284 @@
+/* font */
+@font-face {
+    /* font-properties */
+    font-family: FontAwesome;
+    src:url('../fonts/fontawesome-webfont.woff'),  
+    url('../fonts/fontawesome-webfont.ttf'),
+    /* url('../fonts/fontawesome-webfont.svg'), */
+    url('../fonts/fontawesome-webfont.woff2'),
+    url('../fonts/fontawesome-webfont.eot'); /* IE9 */
+}
+
+body {
+    font-family: "FontAwesome";
+    font-size:14px;
+    color:#333;
+}
+a {
+    color: #666;
+}
+a:hover {
+    /* color: #0153ba; */
+    text-decoration: none;
+}
+h3, h5, h6, .ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.xz {
+    color: #0153ba !important;
+}
+
+#content{
+    max-width: 100%;
+    margin: 0 1.8%;
+}
+#content section{
+    max-width: 1800px;
+    margin: 0px auto;
+}
+#content .i-t, #content .c_about {
+    padding: 0 5%;
+}
+
+
+
+/* top */
+body>header {
+    height: 66px;
+    padding: 0 3.6%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: .6s;
+}
+nav>a {
+    /* line-height: 65px; */
+    color: #666;
+    /* border-bottom: 1px solid #fff; */
+    transition: .6s;
+    position: relative;
+}
+nav>a::before {
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: #0153ba;
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    opacity: 0;
+    transition: .6s;
+}
+nav>a:hover {
+    color: #0153ba;
+}
+nav>a:hover::before {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+}
+header nav .dropdown-menu {
+    width: 20%;
+    top: 20px !important;
+    left: -7% !important;
+}
+/* 上下箭头 */
+/* nav a i::before{
+    content: "\f107";
+    font: normal normal normal 14px/1 FontAwesome;
+}
+nav a:hover i::before{
+    content: "\f106";
+} */
+nav>i{
+    background: url(../images/icon_ss.png) no-repeat;
+    cursor: pointer;
+}
+
+
+
+/* sidebar */
+.sidebar>a{
+    width: 40px;
+    /* color: #666; */
+    font: normal normal normal 18px/1 FontAwesome;
+    right: 2px;
+}
+.sidebar a:hover{
+    color: #fff;
+    border-color: #0153ba !important;
+    background-color: #0153ba !important;
+}
+.btn_feedback::before{
+    line-height: 40px;
+    content: "\f18a";
+}
+.btn_player::before{
+    font-size: 24px;
+    line-height: 40px;
+    content: "\f10b";
+}
+.btn_top::before{
+    font-size: 24px;
+    line-height: 40px;
+    content: "\f106";
+}
+.btn_player{
+    bottom: 81px;
+}
+.btn_feedback{
+    bottom: 122px;
+}
+.btn_top{
+    bottom: 40px;
+    display: none;
+}
+.sidebar div div {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sidebar i {
+    top: 0;
+    opacity: .6;
+}
+
+
+
+/* footer */
+body>footer{
+    font-size: 12px;
+    color: #666;
+}
+
+
+
+/* Investment business */
+.more::before {
+    content: " ";
+    width: 40px;
+    height: 1px;
+    background-color: #007bff;
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+
+
+
+/* subpage */
+.menu span, .menu i {
+    color: #666;
+}
+.menu div:first-child {
+    font-size: 12px;
+}
+.menu div:first-child i::before {
+    content: "\f105";
+    font: normal normal normal 14px/1 FontAwesome;
+}
+.menu p{
+    height: 100%;
+}
+.menu div:last-child a {
+    font-size: 13px;
+    color: #999;
+}
+.menu div:last-child a:hover {
+    color: #0153ba;
+}
+
+section .row {
+    overflow: hidden;
+}
+section .row img {
+    transition: .6s;
+}
+section .row a:hover img {
+    transform: scale(1.05);
+}
+
+
+
+/* 箭头方块 */
+.b_right, .b_light {
+    width: 64px !important;
+    height: 64px !important;
+    margin-top: -32px;
+    text-align: center;
+    background: #0153ba !important;
+    cursor: pointer;
+    position: absolute;
+}
+.b_light::before {
+    content: "";
+    width: 0;
+    height: 0;
+    font-size: 0px;
+    margin-top: -6px;
+    margin-left: -3px;
+    border-right: 6px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    top: 50%;
+    transition: all 0.2s cubic-bezier(.785, .135, .15, .86);
+}
+.b_right::before {
+    content: "";
+    width: 0;
+    height: 0;
+    font-size: 0px;
+    margin-top: -6px;
+    border-left: 6px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    top: 50%;
+    transition: all 0.2s cubic-bezier(.785, .135, .15, .86);
+}
+
+
+
+/* base */
+#content .listWrap {
+    max-width: 40%;
+    /* max-width: 390px; */
+}
+
+
+
+/* 动画 */
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp
+}

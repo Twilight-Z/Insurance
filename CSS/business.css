@@ -1,0 +1,110 @@
+.t_menu>div:nth-child(2){
+    background-image: url(../images/t_bg1.png);
+}
+
+/* image-text */
+.it_t h2{
+    font-size: 20px;
+}
+.it_t h2+p{
+    color: #bbb;
+    line-height: 26px;
+}
+
+.it_t div+div{
+    margin-top: 14px;
+}
+.it_t a{
+    padding: 0 14px;
+    font-size: 13px;
+    color: #666;
+    display: inline-block;
+}
+.it_t a:last-child{
+    margin-left: 50px;
+    border-left: 7px solid #333;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+.it_t+div{
+    margin-top: 34px;
+}
+.it_it>div{
+    width: 33.3%;
+    height: 480px;
+    padding: 0 46px 0 46px;
+    border: 1px solid #f2f2f2;
+    background: #fff;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.it_it>div+div{
+    border-left: none;
+}
+.it_it div img{
+    max-width: 100%;
+    padding: 60px 0 34px 0;
+}
+.it_it div div{
+    padding: 0 20px 60px 20px;
+}
+.it_it div h3{
+    line-height: 30px;
+}
+.it_it div p{
+    max-height: 52px;
+    line-height: 26px;
+    margin-top: 13px;
+    font-size: 13px;
+    color: #999;
+    position: relative;
+    overflow: hidden;
+}
+.it_it div p::after{
+    content: "···";
+	position: absolute;
+	bottom: 0;
+	right: 2px;
+	padding-left: 40px;
+	background: -webkit-linear-gradient(left,transparent,#fff 66%);
+	background: -o-linear-gradient(right,transparent,#fff 66%);
+	background: -moz-linear-gradient(right,transparent,#fff 66%);
+	background: linear-gradient(to right,transparent,#fff 66%);
+}
+.it_it div span{
+    color: #0153ba;
+    position: absolute;
+    bottom: 90px;
+}
+/* .it_t2 div span{
+    bottom: 200px;
+} */
+.it_it div span::before, .it_t2 div span::before, .c_about .ca_one a::before, .team div+div span::before{
+    content: " ";
+    width: 40px;
+    height: 1px;
+    background-color: #0153ba;
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    /* -webkit-animation-name: goBack;
+    animation-name: goBack;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-timing-function: cubic-bezier(.785, .135, .15, .86);
+    animation-timing-function: cubic-bezier(.785, .135, .15, .86); */
+}
+/* .it_it:hover div span::before{    
+    -webkit-animation-name: goBack;
+    animation-name: goBack;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-timing-function: cubic-bezier(.785, .135, .15, .86);
+    animation-timing-function: cubic-bezier(.785, .135, .15, .86);
+} */
