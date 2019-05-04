@@ -1,0 +1,35 @@
+<title>Insurance-Partner</title>
+
+<?php require_once('view/common/meta.html'); ?>
+<style>
+    .menu+section img {
+        width: 18.8%;
+    }
+</style>
+<?php require_once('view/common/header.html'); ?>
+
+
+<!-- menu -->
+<div class="menu bg-white p-0">
+    <div class="ml-5 pt-3">
+        <span>您的位置：</span>
+        <a href="./Insurance_bs.html">首页</a>
+        <i class="px-2"></i>
+        <a href="javascript:;">品牌</a>
+        <i class="px-2"></i>
+        <a class="xz" href="./subpage/parent.bs.html">合作伙伴</a>
+    </div>
+    <hr class="mb-0">
+</div>
+
+<!-- body -->
+<section id="content" class="bg-light p-5">
+    <div class="row">
+        <?php foreach($partner as $key => $val) { ?>
+        <img class="mb-4 p-0 w-100 col-2" src="<?php echo _IMG_.$val['p_img'] ?>" alt="<?php echo $val['p_name'] ?>" style="margin-left: 3%;">
+        <?php } ?>
+    </div>
+</section>
+
+
+<?php require_once('view/common/footer.html'); ?>

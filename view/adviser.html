@@ -1,0 +1,77 @@
+<title>Insurance-Adviser</title>
+
+<?php require_once('view/common/meta.html'); ?>
+<style>
+	.menu p {
+		height: 200px;
+		background: url(<?php echo _IMG_ ?>t_bg3.png) no-repeat center;
+	}
+
+	.menu+section .row {
+		background-color: #eff1f5;
+	}
+
+	.menu+section .row p {
+		height: 58px;
+		line-height: 26px;
+		transition: .5s;
+		overflow: hidden;
+	}
+
+	.menu+section .row span::after {
+		content: "";
+		width: 0;
+		border-top: 1px solid #ddd;
+		position: absolute;
+		left: 0;
+		bottom: -18px;
+		transition: .5s;
+	}
+
+	.menu+section .row:hover span::after {
+		width: 100%;
+	}
+
+	.menu+section .row:hover p {
+		margin-top: 32px;
+	}
+</style>
+<?php require_once('view/common/header.html'); ?>
+
+
+
+<!-- menu -->
+<div class="menu bg-white pb-5">
+	<div class="ml-5 pt-3">
+		<span>您的位置：</span>
+		<a href="./Insurance_bs.html">首页</a>
+		<i class="px-2"></i>
+		<a href="javascript:;">品牌</a>
+		<i class="px-2"></i>
+		<a class="xz" href="./subpage/adviser.bs.html">投资顾问</a>
+	</div>
+	<hr class="mb-0">
+	<p class=""></p>
+</div>
+
+<!-- body -->
+<section id="content" class="bg-light p-5">
+	<div class="d-flex justify-content-between flex-wrap p-0">
+		<?php foreach($teams as $key => $val) { ?>
+		<div class="w-50 row p-0 mb-4">
+         <a class="col-5 p-0" href="./adviser_list.php?tid=<?php echo $val['t_id'] ?>">
+            <img class="w-100" src="<?php echo _IMG_.$val['t_img'] ?>" alt="">
+         </a>
+			<div class="col px-5 pt-5"><a href="./adviser_list.php?tid=<?php echo $val['t_id'] ?>">
+					<h6><?php echo $val['t_name'] ?></h6>
+					<span class="text-black-50 mb-3 d-block position-relative"><?php echo $val['t_job'] ?></span>
+					<p class="text-secondary mb-0"><?php echo mb_replaceSubstr(preg_replace("/<[^<>]*?>/", '',
+						$val['t_content']), 36).'...' ?></p>
+				</a></div>
+		</div>
+		<?php } ?>
+	</div>
+</section>
+
+
+<?php require_once('view/common/footer.html'); ?>

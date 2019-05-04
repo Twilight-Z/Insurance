@@ -1,0 +1,46 @@
+<title>Insurance-Recruitment</title>
+
+<?php require_once('view/common/meta.html'); ?>
+<style>
+</style>
+<?php require_once('view/common/header.html'); ?>
+
+
+<!-- menu -->
+<div class="menu bg-white pb-5">
+   <div class="ml-5 pt-3">
+      <span>您的位置：</span>
+      <a href="./Insurance_bs.html">首页</a>
+      <i class="px-2"></i>
+      <a href="javascript:;">品牌</a>
+      <i class="px-2"></i>
+      <a class="xz" href="./subpage/recruitment.bs.html">人才招聘</a>
+   </div>
+   <hr class="mb-0">
+   <div class="py-5 my-2 text-center">
+      <h5>人才招聘</h5>
+      <p class="text-black-50 p-0">Recruitment</p>
+   </div>
+</div>
+
+<!-- body -->
+<section id="content" class="w-75 m-auto">
+   <div class="">
+      <?php echo $article['a_content'] ?>
+   </div>
+   <div>
+      <?php foreach($recruit as $val) { ?>
+         <hr>
+         <div class="clearfix py-4">
+            <img class="float-left" src="<?php echo _IMG_.$val['r_img'] ?>" alt="">
+            <div>
+               <h6 class="font-weight-bold mb-4"><?php echo $val['r_title'] ?></h6>
+               <p class="mb-4 text-black-50"><?php echo $val['r_content'] ?></p>
+            </div>
+         </div>
+      <?php } ?>
+   </div>
+</section>
+
+
+<?php require_once('view/common/footer.html'); ?>

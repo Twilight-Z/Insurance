@@ -1,0 +1,10 @@
+.f_brand .b_right::after {
+   content: "";
+   width: 0px;
+   height: 2px;
+   position: absolute;
+   top: -1px;
+   right: -10px;
+   background: #fff;
+   transition: all 0.2s cubic-bezier(.785, .135, .15, .86);
+ }

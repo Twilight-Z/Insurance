@@ -1,0 +1,35 @@
+<title>adviser-list</title>
+<?php require_once('view/common/meta.html'); ?>
+<?php require_once('view/common/header.html'); ?>
+
+
+<!-- menu -->
+<div class="menu bg-white pb-5">
+   <div class="ml-5 pt-3">
+      <span>您的位置：</span>
+      <a href="../Insurance_bs.html">首页</a>
+      <i class="px-2"></i>
+      <a class="" href="./adviser.bs.html">品牌</a>
+      <i class="px-2"></i>
+      <a class="xz" href="./a1.bs.html">投资顾问</a>
+   </div>
+   <hr class="mb-5">
+</div>
+
+<!-- content -->
+<section id="content" class="d-flex justify-content-center bg-white p-5">
+   <div class="mr-5">
+      <img class="w-100" src="<?php echo _IMG_.$teams['t_img'] ?>" alt="">
+   </div>
+   <div class="pr-5 mb-5 pb-5 w-75">
+      <h6 class="font-weight-bold"><?php echo $teams['t_name'] ?></h6>
+      <p class="text-secondary mb-4"><?php echo $teams['t_job'] ?></p>
+      <hr class="mb-5">
+      <!-- <p class="text-black-50 mb-4"> -->
+         <?php echo $teams['t_content'] ?>
+      <!-- </p> -->
+   </div>
+</section>
+
+
+<?php require_once('view/common/footer.html'); ?>

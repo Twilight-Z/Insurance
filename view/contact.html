@@ -1,0 +1,52 @@
+<title>Insurance-Contact</title>
+
+<?php require_once('view/common/meta.html'); ?>
+<style>
+    section div {
+        width: 1264px;
+    }
+    section div div {
+        width: 1060px;
+    }
+    section .d-flex div {
+        width: 28%;
+    }
+    section .d-flex span, section .d-flex p {
+        font-size: 13px;
+        display: block;
+    }
+</style>
+<?php require_once('view/common/header.html'); ?>
+
+
+<!-- menu -->
+<div class="menu bg-white pb-5">
+    <div class="ml-5 pt-3">
+        <span>您的位置：</span>
+        <a href="./index.php">首页</a>
+        <i class="px-2"></i>
+        <a class="xz" href="./subpage/contact.php">联系我们</a>
+    </div>
+    <hr class="mb-0">
+    <div class="py-5 my-2 text-center">
+        <h5>联系我们</h5>
+        <p class="text-black-50 p-0">Contact us</p>
+    </div>
+</div>
+
+<!-- body -->
+<section id="content" class="m-0 pb-5">
+    <div class="m-auto">
+        <iframe src="view/baidu.html" frameborder="0" width="1264px" height="420px"></iframe>
+    </div>
+    <div class="m-auto">
+        <hr>
+        <div class="pt-4 pb-5 m-auto d-flex justify-content-between">
+           <?php echo $contact['a_content'] ?>
+        </div>
+        <hr>
+    </div>
+</section>
+
+
+<?php require_once('view/common/footer.html'); ?>

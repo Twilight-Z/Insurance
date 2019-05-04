@@ -1,0 +1,54 @@
+<title>case-list</title>
+<?php require_once('view/common/meta.html'); ?>
+
+<style>
+   #content .listWrap .border {
+      transition: .5s;
+   }
+
+   #content .listWrap .border:hover {
+      color: #fff !important;
+      background-color: #0153ba !important;
+   }
+</style>
+<?php require_once('view/common/header.html'); ?>
+
+<!-- menu -->
+<div class="menu bg-white pb-5">
+   <div class="ml-5 pt-3">
+      <span>您的位置：</span>
+      <a href="../Insurance_bs.html">首页</a>
+      <i class="px-2"></i>
+      <a class="" href="./case.bs.html">投资案例</a>
+      <i class="px-2"></i>
+      <a class="xz" href=""><?php echo $cases['cc_name'] ?></a>
+   </div>
+   <hr class="mb-5">
+</div>
+
+<!-- content -->
+<section id="content" class="d-flex justify-content-center bg-white p-5">
+   <div class="listWrap mr-5">
+      <h6 class="mb-0"><?php echo $cases['c_title'] ?></h6>
+      <p class="text-secondary">2017-07-11<?php echo $cases['c_time'] ?></p>
+      <p class="text-black-50 pt-2"><?php echo $cases['c_subtitle'] ?></p>
+      <hr class="my-">
+      <p class="my-4 font-weight-bold">相关内容</p>
+      <a class="mb-4 px-3 py-1 d-inline-block border" href=""><?php echo $cases['cc_name'] ?></a>
+      <div class="mt-3 d-flex justify-content-between">
+         <a class="mr-2 border" href="./b1.bs.html">
+            <img class="w-100" src="../images/icon_it4.jpg" alt="">
+            <p class="text-center my-2"><?php echo $cases['c_title'] ?></p>
+         </a>
+         <a class="border" href="./b2.bs.html">
+            <img class="w-100" src="../images/icon_it5.jpg" alt="">
+            <p class="text-center my-2">为Mata Capital提供3000万欧元的收购融资</p>
+         </a>
+      </div>
+   </div>
+   <div class="pr-5 mb-5 pb-5">
+      <?php echo $cases['c_content'] ?>
+   </div>
+</section>
+
+<?php require_once('view/common/footer.html'); ?>

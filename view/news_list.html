@@ -1,0 +1,32 @@
+<title>news-list</title>
+<?php require_once('view/common/meta.html'); ?>
+<?php require_once('view/common/header.html'); ?>
+
+
+<!-- menu -->
+<div class="menu bg-white pb-5">
+   <div class="ml-5 pt-3">
+      <span>您的位置：</span>
+      <a href="../Insurance_bs.html">首页</a>
+      <i class="px-2"></i>
+      <a class="" href="./news.bs.html">新闻资讯</a>
+      <i class="px-2"></i>
+      <a class="xz" href="./n1.bs.html">最新</a>
+   </div>
+   <hr class="mb-5">
+</div>
+
+<!-- content -->
+<section id="content" class="bg-white p-5">
+   <div class="my-4 text-center">
+      <h6 class="mb-0"><?php echo $news['n_title'] ?></h6>
+      <p class="text-secondary">2016-12-08<?php echo $news['n_time'] ?></p>
+      <p class="text-black-50 pt-2"><?php echo $news['n_subtitle'] ?></p>
+   </div>
+   <hr class="mb-5">
+   <div class="pr-5 mb-5 pb-5">
+      <?php echo $news['n_content'] ?>
+   </div>
+</section>
+
+<?php require_once('view/common/footer.html'); ?>

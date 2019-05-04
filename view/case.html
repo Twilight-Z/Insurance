@@ -1,0 +1,48 @@
+<title>Insurance-Case</title>
+
+<?php require_once('view/common/meta.html'); ?>
+<style>
+   .menu p{
+      height: 200px;
+      background: url(<?php echo _IMG_ ?>t_bg2.png) no-repeat center;
+   }
+</style>
+<?php require_once('view/common/header.html'); ?>
+
+
+<!-- menu -->
+<div class="menu bg-white pb-5">
+   <div class="ml-5 pt-3">
+      <span>您的位置：</span>
+      <a href="./Insurance_bs.html">首页</a>
+      <i class="px-2"></i>
+      <a class="xz" href="./subpage/case.bs.html">投资案例</a>
+   </div>
+   <hr class="mb-0">
+   <p class="mb-5"></p>
+   <div class="d-flex pt-3 justify-content-center">
+      <a class="px-3 xz" href="./subpage/case.bs.html">全部</a>
+      <a class="px-3" href="javascript:;">战略咨询</a>
+      <a class="px-3" href="javascript:;">结构资本</a>
+      <a class="px-3" href="javascript:;">资产重组</a>
+   </div>
+</div>
+
+<!-- body -->
+<section id="content" class="bg-light p-5">
+   <div class="row mx-4 my-3 bg-white">
+      <?php foreach($cases as $key => $val) { ?>
+      <a class="col-sm-12 col-md-6 col-lg-4 px-5 pt-5 border <?php if($key%3!=0) echo 'border-left-0'; if($key>2) echo ' border-top-0'; ?>"
+         href="case_list.php?cid=<?php echo $val['c_id'] ?>"><div>
+         <img class="w-100" src="<?php echo _IMG_ ?><?php echo $val['c_img'] ?>" alt="">
+         <div class="p-4 mt-3">
+            <h6 class="ellipse"><?php echo $val['c_title'] ?></h6>
+            <p class="text-black-50"><?php echo $val['cc_name'] ?></p>
+         </div>
+      </div></a>
+      <?php } ?>
+   </div>
+</section>
+
+
+<?php require_once('view/common/footer.html'); ?>

@@ -1,0 +1,219 @@
+<?php include_once('view/common/meta.html'); ?>
+<title>Insurance</title>
+<link rel="stylesheet" href="<?php echo _CSS_ ?>main-bs.css" type="text/css" media="All">
+<?php include_once('view/common/header.html'); ?>
+
+
+<!-- body -->
+<div id="content">
+   <!-- 轮播图 START -->
+   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+         <?php foreach($banner as $key => $val) { ?>
+         <div class="carousel-item <?php if($key==0) echo 'active' ?>">
+            <img class="d-block w-100" src="<?php echo _UPLOAD_.$val['b_img'] ?>" alt="Banner slide">
+         </div>
+         <?php } ?>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+      </a>
+   </div>
+   <!-- 轮播图 END -->
+   <!-- business START -->
+   <section class="i-t py-5">
+      <div class="it_t pt-5 mb-3 d-flex justify-content-between align-items-center">
+         <div>
+            <h5>投资业务</h5>
+            <p class="text-black-50">servies</p>
+         </div>
+         <div>
+            <a class="px-3 xz" href="">全部</a>
+            <a class="px-3" href="">分类1</a>
+            <a class="px-3" href="">分类2</a>
+            <a class="ml-5" href=""></a>
+         </div>
+      </div>
+      <div class="pb-5 row bg-white">
+         <?php foreach($servies as $key => $val) { ?>
+         <a class="col-sm-12 col-md-6 col-lg-4 p-5 border <?php if($key!=0) echo 'border-left-0' ?>"
+            href="business_list.php?sid=<?php echo $val['s_id'] ?>">
+            <div>
+               <img class="w-100 pt-2 pb-4" src="<?php echo _IMG_.$val['s_img'] ?>" alt="">
+               <div class="my-3 pb-4">
+                  <h6 class="mb-3 text-dark"><?php echo $val['s_title'] ?></h6>
+                  <p class="text-black-50 mb-3"><?php echo mb_replaceSubstr($val['s_content'], 41).'...' ?></p>
+                  <span class="more text-primary position-relative">MORE</span>
+               </div>
+            </div>
+         </a>
+         <?php } ?>
+      </div>
+   </section>
+   <!-- business END -->
+   <section class="banner position-relative">
+      <img class="w-100" src="<?php echo _IMG_ ?>img1.jpg" alt="">
+   </section>
+   <!-- Investment case -->
+   <section class="i-t py-5">
+      <div class="pt-5 mb-3 d-flex justify-content-between align-items-center">
+         <div class="">
+            <h5>投资案例</h5>
+            <p class="text-black-50">servies</p>
+         </div>
+         <div class="">
+            <a class="px-3 xz" href="">全部</a>
+            <a class="px-3" href="">战略咨询</a>
+            <a class="px-3" href="">结构资本</a>
+            <a class="px-3" href="">资产重组</a>
+            <a class="ml-5" href=""></a>
+         </div>
+      </div>
+      <div class="it_it row bg-white">
+         <?php foreach($cases as $key => $val) { ?>
+         <a class="col-sm-12 col-md-6 col-lg-4 px-5 pt-5 border <?php if($key%3!=0) echo 'border-left-0'; if($key>2) echo ' border-top-0'; ?>"
+            href="case_list.php?cid=<?php echo $val['c_id'] ?>">
+            <div>
+               <img class="w-100" src="<?php echo _IMG_ ?><?php echo $val['c_img'] ?>" alt="">
+               <div class="p-4 mt-3">
+                  <h6 class="ellipse"><?php echo $val['c_title'] ?></h6>
+                  <p class="text-black-50"><?php echo $val['cc_name'] ?></p>
+               </div>
+            </div>
+         </a>
+         <?php } ?>
+      </div>
+   </section>
+   <!-- About us -->
+   <section class="c_about py-5 row">
+      <div class="ca_one pt-5 w-50 bg-light p-5">
+         <h5 class="mx-4 pt-4">关于我们</h5>
+         <h6 class="mx-4 text-secondary">About us</h6>
+         <p class="text-black-50 m-4 py-2">我们的投资者合作伙伴是一个生活方式的合作伙伴，他们在“个人时代”实现了一个让自己的人们可以享受自己生活的环境。</p>
+         <a class="more position-relative mx-4" href="">MORE</a>
+      </div>
+      <div class="w-50 pb-5">
+         <img class="w-100" src="<?php echo _IMG_ ?>img2.jpg" alt="">
+      </div>
+   </section>
+   <!-- News Information -->
+   <section class="i-t py-5">
+      <div class="it_t pt-5 mb-3 d-flex justify-content-between align-items-center">
+         <div class="">
+            <h5>新闻资讯</h5>
+            <p class="text-black-50">News Information</p>
+         </div>
+         <div class="">
+            <a class="px-3 xz" href="">全部</a>
+            <a class="px-3" href="">最新</a>
+            <a class="px-3" href=""></a>
+         </div>
+      </div>
+      <div class="it_t2 row bg-white border-top mt-4">
+         <?php foreach($news as $key => $val) { ?>
+         <a class="col-sm-12 col-md-6 col-lg-4 p-5" href="news_list.php?nid=<?php echo $val['n_id'] ?>">
+            <div>
+               <h4 class="text-black-50">12&nbsp;-&nbsp;08</h4>
+               <h5 class="text-dark my-4 ellipse"><?php echo $val['n_title'] ?></h5>
+               <p class="text-black-50 my-4"><?php echo mb_replaceSubstr($val['n_subtitle'], 46).'...' ?></p>
+               <span class="text-primary more position-relative">MORE</span>
+            </div>
+         </a>
+         <?php } ?>
+      </div>
+   </section>
+   <!-- team -->
+   <section class="i-t team py-5 position-relative">
+      <div class="my-5 pt-5">
+         <h5>投资顾问</h5>
+         <p class="text-black-50">team</p>
+      </div>
+      <div class="row p-0 align-items-center mb-5">
+         <a class="col-5 p-0" href="view/a1.bs.html"><img class="w-100" src="<?php echo _IMG_ ?>character1.jpg"
+               alt=""></a>
+         <div class="col px-5 mx-5"><a href="">
+               <h5>鲍比・布尔茹瓦</h5>
+               <h6 class="text-black-50">首席执行官</h6>
+               <p class="px-5 pt-4 pb-5">Robby
+                  Bourgeois是董事总经理，领导其财务与运营团队。他也是该公司的首席合规官。在安永会计师事务所担任保险和咨询业务部门之前就职于安永会计师事务所。 </p>
+               <span class="more mx-5 position-relative text-primary">MORE</span>
+            </a></div>
+      </div>
+      <div class="b_right"></div>
+      <div class="b_light"></div>
+   </section>
+   <!-- footer -->
+   <footer class="pt-5 pb-4 position-relative">
+      <!-- 合作商标 -->
+      <div class="f_brand" style="height: 10vw;">
+         <div class="overflow-hidden position-relative w-100 h-100">
+            <ul class="mb-0 position-absolute list-unstyled clearfix" style="width: 100vw;">
+               <?php foreach($partner as $key => $val) { ?>
+               <img class="<?php if($key!=0) echo 'ml-3' ?> rounded float-left" src="<?php echo _IMG_.$val['p_img'] ?>" alt="<?php echo $val['p_name'] ?>">
+               <?php } ?>
+            </ul>
+         </div>
+         <div class="b_right"></div>
+         <div class="b_light"></div>
+      </div>
+      <!-- 底部信息 -->
+      <div class="container mt-5 pt-5">
+         <div class="row py-5 m-auto">
+            <?php echo $fArticle['a_content'] ?>
+         </div>
+      </div>
+   </footer>
+</div>
+
+
+<?php include_once('view/common/footer.html'); ?>
+
+<script>
+   // 获取对象
+   let $Con = $("footer .f_brand");
+   let $T = $("footer .f_brand div>ul");
+   let $btn = $("footer .f_brand>div+div");
+
+   let i = 0; /*  */
+   const $len = $T.children().length; /* 图片数 */
+   let $wid; /* 宽 */
+   let $hig; /* 高 */
+
+   // 初始化
+   $(function () {
+      $wid = $($T.children()[0]).width();
+      $hig = $($T.children()[0]).height();
+      // $Con.width($wid * 5);
+      // $T.width($wid * $len);
+      // $Con.height($hig);
+      // $T.height($hig);
+   })
+
+   // 按钮函数
+   $($btn[0]).click(function () {
+      $T.stop().animate({
+         'left': '-' + $wid + 'px'
+      }, 500, function () {
+         $T.append($T.children().first());
+         $(this).css('left', '0');
+      });
+   })
+   $($btn[1]).click(function () {
+      $T.prepend($T.children().last());
+      $T.css('left', '-' + $wid + 'px');
+      $T.stop().animate({
+         'left': '0'
+      }, 500);
+   })
+</script>

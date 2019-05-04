@@ -1,0 +1,54 @@
+<title>business-list</title>
+<?php require_once('view/common/meta.html'); ?>
+
+<style>
+   #content .listWrap .border {
+      transition: .5s;
+   }
+
+   #content .listWrap .border:hover {
+      color: #fff !important;
+      background-color: #0153ba !important;
+   }
+</style>
+<?php require_once('view/common/header.html'); ?>
+
+
+<!-- menu -->
+<div class="menu bg-white pb-5">
+   <div class="ml-5 pt-3">
+      <span>您的位置：</span>
+      <a href="../Insurance_bs.html">首页</a>
+      <i class="px-2"></i>
+      <a class="" href="./business.bs.html">投资业务</a>
+      <i class="px-2"></i>
+      <a class="xz" href="./b1.bs.html">分类</a>
+   </div>
+   <hr class="mb-5">
+</div>
+
+<!-- content -->
+<section id="content" class="d-flex justify-content-center bg-white p-5">
+   <div class="pr-5 mb-5 pb-5">
+      <?php echo $servies['s_content']; ?>
+   </div>
+   <div class="listWrap ml-5">
+      <h6><?php echo $servies['s_title'] ?></h6>
+      <p class="text-black-50 mb-5 pt-3 pb-4"><?php echo $servies['s_subtitle']; ?></p>
+      <hr>
+      <p class="my-4 font-weight-bold">相关内容</p>
+      <a class="mb-4 px-3 py-1 d-inline-block border" href=""><?php echo $servies['s_title'] ?></a>
+      <div class="mt-3 d-flex justify-content-between">
+         <a class="mr-2 border" href="./b1.bs.html">
+            <img class="w-100" src="../images/icon_it1.png" alt="">
+            <p class="text-center mb-0 p-3 ellipse">融资咨询</p>
+         </a>
+         <a class="border" href="./b2.bs.html">
+            <img class="w-100" src="../images/icon_it2.png" alt="">
+            <p class="text-center mb-0 p-3 ellipse">资本结构</p>
+         </a>
+      </div>
+   </div>
+</section>
+
+<?php require_once('view/common/footer.html'); ?>
