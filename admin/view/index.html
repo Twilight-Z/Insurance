@@ -32,17 +32,23 @@
             <ul class="nav" id="side-menu">
                <li class="nav-header">
                   <div class="dropdown profile-element">
-                     <span><img alt="image" class="img-circle" src="<?php echo _IMG_ ?>profile_small.jpg" /></span>
+                     <span class="img_show">
+                        <img alt="image" class="img-circle" src="<?php echo $admin['admin_img']? _UPLOAD_.$admin['admin_img']: _IMG_.'profile_small.jpg' ?>" style="width: 64;height: 64px;" />
+                     </span>
                      <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">
                         <span class="clear">
-                           <span class="block m-t-xs"><strong class="font-bold">Donate</strong></span>
-                           <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                           <span class="block m-t-xs"><strong class="font-bold"><?php echo $admin['admin_username'] ?></strong></span>
+                           <span class="text-muted text-xs block"><?php echo $admin['admin_id']==1? '超级管理员':'管理员' ?><b class="caret"></b></span>
                         </span>
                      </a>
                      <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a class="J_menuItem" href="form_avatar.html">修改头像</a>
+				            <form id="form" action="" method="POST" enctype="multipart/form-data">
+                           <input type="file" name="upload" class="upfile hidden" accept="image/*">
+                           <input type="hidden" name="000">
+				            </form>
+                        <li><a class="J_menuItem">修改头像</a>
                         </li>
-                        <li><a class="J_menuItem" href="profile.html">个人资料</a>
+                        <li><a class="J_menuItem" href="admin_detail.php">个人资料</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="login.php">安全退出</a>
@@ -57,7 +63,7 @@
                         class="nav-label">首页</span></a>
                </li>
                <li>
-                  <a class="J_menuItem" href="list.html"><i class="fa fa-users"></i> <span
+                  <a class="J_menuItem" href="lists.php?lists=user"><i class="fa fa-users"></i> <span
                         class="nav-label">用户管理</span></a>
                </li>
                <li>
@@ -116,9 +122,15 @@
                         class="nav-label">伙伴管理</span></a>
                </li>
                <li>
-                  <a class="J_menuItem" href="gbook_list.html"><i class="fa fa-comments"></i> <span
+                  <a class="J_menuItem" href="lists.php?lists=message"><i class="fa fa-comments"></i> <span
                         class="nav-label">留言管理</span></a>
                </li>
+               <?php if($admin['admin_id']==1) { ?>
+               <li>
+                  <a class="J_menuItem" href="lists.php?lists=admin"><i class="fa fa-users"></i> <span
+                        class="nav-label">管理员管理</span></a>
+               </li>
+               <?php } ?>
             </ul>
          </div>
       </nav>
@@ -173,3 +185,39 @@
 </body>
 
 </html>
+
+<script>
+	const DI = $('.fadeInRight form .upfile');
+	const oBtn = $('.fadeInRight form+li .J_menuItem');
+	oBtn.click(function(){
+		DI.trigger('click');
+	});
+	DI.upfile = function () {
+		$('.img_show').each(function () {
+			var $this = $(this),
+				img = $this.find('img');
+			DI.on('change', function () {
+				var file = $(this)[0].files[0],
+					imgSrc = $(this)[0].value,
+					url = URL.createObjectURL(file);
+				if (!/\.(jpg|jpeg|png|JPG|PNG|JPEG)$/.test(imgSrc)) {
+					alert("请上传jpg或png格式的图片！");
+					return false;
+				} else {
+					img.attr('src', url);
+					img.css({
+						'opacity': '1'
+					});
+				}
+            // let from = new FormData(document.getElementById("form"));
+            // let form = $('form .upfile');
+            // alert(form);
+            // const id = <?php echo $admin['admin_id'] ?>;
+            // $.post('photo.php', {id:id,img:from}, function (result) {
+            //    alert(result);
+            // })
+            // $('form').ajaxSubmit();
+			});
+		});
+	}();
+</script>

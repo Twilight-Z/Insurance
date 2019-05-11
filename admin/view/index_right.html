@@ -89,19 +89,20 @@
                </div>
                <div class="ibox-content">
                   <div class="feed-activity-list">
-
+                     <?php foreach($message as $val) { ?>
                      <div class="feed-element">
                         <div>
-                           <small class="pull-right text-navy">1月前</small>
-                           <strong>井幽幽</strong>
+                           <small class="pull-right text-navy"><?php echo transTime($val['m_time']); ?></small>
+                           <strong><?php echo $val['m_name']; ?></strong>
                            <div>
-                              有人说：“一辈子很长，要跟一个有趣的人在一起”。我想关注我的人，应该是那种喜欢找乐子也乐意分享乐趣的人，你们一定挺优秀的。所以单身的应该在这条留言，互相勾搭一下。特别有钱人又帅可以直接私信我！
+                              <?php echo $val['m_content']; ?>
                            </div>
-                           <small class="text-muted">4月11日 00:00</small>
+                           <small class="text-muted"><?php echo date('Y.m.d H:i:s',$val['m_time']); ?></small>
                         </div>
                      </div>
+                     <?php } ?>
 
-                     <div class="feed-element">
+                     <!-- <div class="feed-element">
                         <div>
                            <small class="pull-right">2月前</small>
                            <strong>马伯庸 </strong>
@@ -152,7 +153,7 @@
                            <div>《和外国男票乘地铁，被中国大妈骂不要脸》妹子实在委屈到不行，中国妹子找外国男友很令人不能接受吗？大家都来说说自己的看法</div>
                            <small class="text-muted">11月8日 20:08 </small>
                         </div>
-                     </div>
+                     </div> -->
 
                   </div>
                </div>
@@ -232,22 +233,22 @@
                            <li>
                               <a href="widgets.html#" class="check-link"><i class="fa fa-star"></i> </a>
                               <span class="m-l-xs ">留言总数</span>
-                              <small class="label label-primary pull-right">100</small>
+                              <small class="label label-primary pull-right"><?php echo $total[0]; ?></small>
                            </li>
                            <li>
                               <a href="widgets.html#" class="check-link"><i class="fa fa-star"></i> </a>
                               <span class="m-l-xs  ">会员总数</span>
-                              <small class="label label-primary pull-right">100</small>
-                           </li>
-                           <li>
-                              <a href="widgets.html#" class="check-link"><i class="fa fa-star"></i> </a>
-                              <span class="m-l-xs">产品总数</span>
-                              <small class="label label-primary pull-right">100</small>
+                              <small class="label label-primary pull-right"><?php echo $total[1]; ?></small>
                            </li>
                            <li>
                               <a href="widgets.html#" class="check-link"><i class="fa fa-star"></i> </a>
                               <span class="m-l-xs">文章总数</span>
-                              <small class="label label-primary pull-right">100</small>
+                              <small class="label label-primary pull-right"><?php echo $total[2]; ?></small>
+                           </li>
+                           <li>
+                              <a href="widgets.html#" class="check-link"><i class="fa fa-star"></i> </a>
+                              <span class="m-l-xs">新闻总数</span>
+                              <small class="label label-primary pull-right"><?php echo $total[3]; ?></small>
                            </li>
                         </ul>
                      </div>
@@ -271,28 +272,33 @@
                      <div class="ibox-content">
 
                         <div class="row">
-                           <div class="col-sm-10">
+                           <div class="col-sm-12">
                               <table class="table table-hover margin bottom">
                                  <thead>
                                     <tr>
                                        <th style="width:15%" class="text-center">序号</th>
                                        <th>名称</th>
+                                       <th class="text-center">IP地址</th>
                                        <th class="text-center">创建时间</th>
+                                       <th class="text-center">最后登录时间</th>
                                        <th class="text-center">头像</th>
                                     </tr>
                                  </thead>
                                  <tbody>
+                                    <?php foreach($admin as $val) { ?>
                                     <tr>
-                                       <td class="text-center">1</td>
-                                       <td>donate
+                                       <td class="text-center"><?php echo $val['admin_id'] ?></td>
+                                       <td><?php echo $val['admin_username'] ?>
                                           </small>
                                        </td>
-                                       <td class="text-center small"><i class="fa fa-clock-o"></i> 2014.9.15</td>
-                                       <td class="text-center"><img src="<?php echo _IMG_ ?>profile_small.jpg"
-                                             class="img-circle" alt="">
+                                       <td class="text-center small"><i class="fa fa-clock-o"></i> <?php echo $val['lastip']; ?></td>
+                                       <td class="text-center small"><i class="fa fa-clock-o"></i> <?php echo date('Y.m.d',$val['create']); ?></td>
+                                       <td class="text-center small"><i class="fa fa-clock-o"></i> <?php echo date('Y.m.d',$val['lasttime']); ?></td>
+                                       <td class="text-center"><img src="<?php echo $val['admin_img']? _UPLOAD_.$val['admin_img']: _IMG_.'profile_small.jpg' ?>"
+                                             class="img-circle" alt="" style="width: 64;height: 64px;" >
                                        </td>
-
                                     </tr>
+                                    <?php } ?>
                                  </tbody>
                               </table>
                            </div>

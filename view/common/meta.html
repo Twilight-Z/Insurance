@@ -7,18 +7,120 @@
     <link rel="icon" href="<?php echo _IMG_ ?>favicon.ico">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="static/BootStrap/bootstrap_v4.3.1.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="<?php echo _STATIC_ ?>BootStrap/bootstrap_v4.3.1.min.css" type="text/css" media="all">
     <!-- <link href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap-grid.min.css" rel="stylesheet"> -->
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- JS -->
-    <script src="static/JQurey/JQuery_v3.4.min.js"></script>
+    <script src="<?php echo _STATIC_ ?>JQurey/JQuery_v3.4.min.js"></script>
+    <script src="<?php echo _STATIC_ ?>JQurey/JQuery.Cookie.1.4.1.min.js"></script>
     <!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script> -->
     <script src="https://cdn.bootcss.com/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="static/BootStrap/bootstrap_v4.3.1.min.js"></script>
+    <script src="<?php echo _STATIC_ ?>BootStrap/bootstrap_v4.3.1.min.js"></script>
     <!-- <script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script> -->
 
     <link rel="stylesheet" href="<?php echo _CSS_ ?>base.css" type="text/css" media="All">
 
+    <style>
+       input.form-control:hover {
+            border-color: #999;
+        }
+        /* 提示颜色 */
+        input::input-placeholder{color:#aaa!important;}
+        input::-webkit-input-placeholder/* , textarea::-webkit-input-placeholder  */{
+        color: #aaa!important;
+        }
+        /* input:-moz-placeholder, textarea:-moz-placeholder {
+        color: #aaa!important;
+        }  */
+        input::-moz-placeholder/* , textarea::-moz-placeholder  */{
+        color: #aaa!important;
+        }
+        /* input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+        color: #aaa!important;
+        } */
+        .dn {
+            display: none;
+        }
+        .ImgFr {
+            top: 16px;
+            right: 12px;
+        }
+        .ImgFr2 {
+            top: 16px;
+            left: 110px;
+        }
+    </style>
 
+   <script>
+      $(document).ready(function () {
+         //打开会员登录
+         $("#Login_start_").click(function () {
+            $('#tcc').show(300);
+            $("#myTabContent").hide();
+            $("#_close").show();
+            $("#_start").animate({
+               left: '350px',
+               height: '520px',
+               width: '400px'
+            }, 500, function () {
+               $("#login_container").show(500);
+               $("#_close").animate({
+                  height: '40px',
+                  width: '40px'
+               }, 500);
+            });
+         });
+         //打开会员注册
+         $("#Regist_start_").click(function () {
+            $('#tcc').show(300);
+            $("#login_container").hide();
+            $("#_close").show();
+            $("#_start").animate({
+               left: '350px',
+               height: '520px',
+               width: '400px'
+            }, 500, function () {
+               $("#myTabContent").show(500);
+               $("#_close").animate({
+                  height: '40px',
+                  width: '40px'
+               }, 500);
+            });
+         });
+         //关闭
+         $("#_close").click(function () {
+            $("#_close").animate({
+               height: '0px',
+               width: '0px'
+            }, 500, function () {
+               $("#_close").hide(500);
+               $("#login_container").hide(500);
+               $("#myTabContent").hide(500);
+               $("#_start").animate({
+                  left: '0px',
+                  height: '0px',
+                  width: '0px'
+               }, 500);
+               $('#tcc').hide(300);
+            });
+         });
+         //去 注册
+         $("#toRegist").click(function () {
+            $("#login_container").hide(500);
+            $("#myTabContent").show(500);
+         });
+         //去 登录
+         $("#toLogin").click(function () {
+            $("#myTabContent").hide(500);
+            $("#login_container").show(500);
+         });
+         // 退出登录
+         $('#exit').click(function () {
+            $.removeCookie('islog',{ path: '/'});
+            $.removeCookie('username',{ path: '/'});
+            location.reload();
+         });
+      });
+   </script>

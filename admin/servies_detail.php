@@ -3,7 +3,7 @@
  * @Author: Twilight
  * @Date: 2019-05-02 15:45:44
  * @Last Modified by: Twilight
- * @Last Modified time: 2019-05-03 11:54:02
+ * @Last Modified time: 2019-05-07 11:53:49
  */
 include('./include/init.php');/* 初始化 */
 
@@ -113,9 +113,10 @@ if($_POST) {
    $bool = $dbh->exec($sql);/* 执行SQL */
    // 提示信息
    if($bool)
-      alert('修改成功！', 'servies.php?page='.$page);
-   else
-      alert('修改失败！', get_url());
+      header('location:partner.php?page='.$page); /* PHP重定向 返回原页面 */
+   //    alert('修改成功！', 'servies.php?page='.$page);
+   // else
+   //    alert('修改失败！', get_url());
 
 }
 

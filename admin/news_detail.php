@@ -3,14 +3,14 @@
  * @Author: Twilight
  * @Date: 2019-05-02 15:45:44
  * @Last Modified by: Twilight
- * @Last Modified time: 2019-05-03 21:56:54
+ * @Last Modified time: 2019-05-07 11:53:15
  */
 include('./include/init.php');/* 初始化 */
 
 
 // 获取参数 id
 $page = isset($_GET['page'])? $_GET['page'] : 0; /* 获取页数ID */
-$nid = isset($_GET['nid'])? $_GET['nid'] : 0; /* 获取业务ID */
+$nid = isset($_GET['nid'])? $_GET['nid'] : 0; /* 获取新闻ID */
 // 处理GET传参问题
 $page = intval($page);/* 确保是给数字 */
 $nid = intval($nid);/* 确保是给数字 */
@@ -70,9 +70,10 @@ if($_POST) {
    $bool = $dbh->exec($sql);/* 执行SQL */
    // 提示信息
    if($bool)
-      alert('修改成功！', 'news.php?page='.$page);
-   else
-      alert('修改失败！', get_url());
+      header('location:news.php?page='.$page); /* PHP重定向 返回原页面 */
+   //    alert('修改成功！', 'news.php?page='.$page);
+   // else
+   //    alert('修改失败！', get_url());
 
 }
 

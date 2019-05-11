@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:15 GMT -->
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>H+ 后台主题UI框架 - 基本表单</title>
+   <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+   <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+   <link rel="shortcut icon" href="favicon.ico">
+   <link href="<?php echo _CSS_ ?>bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+   <link href="<?php echo _CSS_ ?>font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+   <link href="<?php echo _CSS_ ?>plugins/iCheck/custom.css" rel="stylesheet">
+   <link href="<?php echo _CSS_ ?>animate.min.css" rel="stylesheet">
+   <link href="<?php echo _CSS_ ?>style.min862f.css?v=4.1.0" rel="stylesheet">
+   <link rel="stylesheet" href="<?php echo _JS_ ?>kindeditor/themes/default/default.css" />
+   <link href="<?php echo _CSS_ ?>plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+   <!-- ueditor -->
+   <script type="text/javascript" charset="utf-8" src="include\ueditor\ueditor.config.js"></script>
+   <script type="text/javascript" charset="utf-8" src="include\ueditor\ueditor.all.min.js"></script>
+   <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+   <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+   <script type="text/javascript" charset="utf-8" src="include\ueditor\lang/zh-cn/zh-cn.js"></script>
+</head>
+
+<body class="gray-bg">
+   <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+         <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+               <div class="ibox-title">
+                  <h5>管理员信息</h5>
+                  <small><a href="lists.php?lists=admin" style="color:#ccc;margin-left:10px"><i
+                           class="fa fa-list"></i>管理员列表</a></small>
+                  <div class="ibox-tools"><button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i
+                           class="fa fa-refresh"></i> 刷新</button>
+                     <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                     </a>
+                     <a class="close-link">
+                        <i class="fa fa-times"></i>
+                     </a>
+                  </div>
+               </div>
+               <div class="ibox-content">
+                  <form method="POST" class="form-horizontal" enctype="multipart/form-data">
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">管理员用户名</label>
+                        <div class="col-sm-3">
+                           <input type="text" name="username" class="form-control" value="<?php if($admin!='') echo $admin['admin_username'] ?>">
+                        </div>
+                     </div>
+                     <div class="hr-line-dashed"></div>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">管理员真名</label>
+                        <div class="col-sm-3">
+                           <input type="text" name="real" class="form-control" value="<?php if($admin!='') echo $admin['admin_real'] ?>">
+                        </div>
+                     </div>
+                     <?php if($aid != 0) { ?>
+                     <div class="hr-line-dashed"></div>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">管理员原密码</label>
+                        <div class="col-sm-3">
+                           <input type="password" name="pw" class="form-control" value="">
+                        </div>
+                     </div>
+                     <?php } ?>
+                     <div class="hr-line-dashed"></div>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">管理员密码</label>
+                        <div class="col-sm-3">
+                           <input type="password" name="password" class="form-control" value="">
+                        </div>
+                     </div>
+                     <div class="hr-line-dashed"></div>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">确认密码</label>
+                        <div class="col-sm-3">
+                           <input type="password" name="repassword" class="form-control" value="">
+                        </div>
+                     </div>
+                     <div class="hr-line-dashed"></div>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">管理员图片</label>
+                        <div class="col-sm-10 img_show">
+                           <img style="max-width: 100px;" src="<?php echo $admin['admin_img']?_UPLOAD_.$admin['admin_img']: _IMG_.'upload.png'; ?>" class="" alt="">
+                           <input class="upfile" type="file" name="upload" id="" accept="image/*" style="display: none">
+                        </div>
+                     </div>
+                     <div class="hr-line-dashed"></div>
+                     <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                           <button class="btn btn-primary" type="submit">保存内容</button>
+                           <a class="btn btn-white" href="javascript:void(0)" onclick="history.go(-1)">取消</a>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="<?php echo _JS_ ?>jquery.min.js?v=2.1.4"></script>
+   <script src="<?php echo _JS_ ?>bootstrap.min.js?v=3.3.6"></script>
+   <script src="<?php echo _JS_ ?>content.min.js?v=1.0.0"></script>
+   <script src="<?php echo _JS_ ?>plugins/layer/laydate/laydate.js"></script>
+   <script src="<?php echo _JS_ ?>plugins/iCheck/icheck.min.js"></script>
+   <script charset="utf-8" src="<?php echo _JS_ ?>kindeditor/kindeditor-min.js"></script>
+   <script charset="utf-8" src="<?php echo _JS_ ?>kindeditor/lang/zh_CN.js"></script>
+   <script src="<?php echo _JS_ ?>plugins/sweetalert/sweetalert.min.js"></script>
+   <script>
+      $(".btn-primary").click(function () {
+         swal({
+            title: "添加成功",
+            text: "提示信息",
+            type: "success"
+         })
+      });
+      var editor;
+      KindEditor.ready(function (K) {
+         editor = K.create('textarea[name="article_desc"]', {
+            allowFileManager: true
+         });
+      });
+      var editor1;
+      KindEditor.ready(function (K) {
+         editor1 = K.create('textarea[name="article_content"]', {
+            allowFileManager: true
+         });
+      });
+      $(document).ready(function () {
+         $(".i-checks").iCheck({
+            checkboxClass: "icheckbox_square-green",
+            radioClass: "iradio_square-green",
+         })
+      });
+      $('#loading-example-btn').click(function () {
+         location.reload();
+      })
+      laydate({
+         elem: "#date",
+         event: "focus"
+      });
+   </script>
+</body>
+
+</html>
+<!-- 图片上传 -->
+<script>
+      let DI = $('.row .img_show>.upfile');
+      let oImg = $('.img_show>img');
+      oImg.click(function(){
+         DI.trigger('click');
+      });
+      DI.upfile = function () {
+         $('.img_show').each(function () {
+            var $this = $(this),
+               btn = $this.find('.upfile'),
+               img = $this.find('img');
+            btn.on('change', function () {
+               var file = $(this)[0].files[0],
+                  imgSrc = $(this)[0].value,
+                  url = URL.createObjectURL(file);
+               if (!/\.(jpg|jpeg|png|JPG|PNG|JPEG)$/.test(imgSrc)) {
+                  alert("请上传jpg或png格式的图片！");
+                  return false;
+               } else {
+                  img.attr('src', url);
+                  img.css({
+                     'opacity': '1'
+                  });
+               }
+            });
+         });
+      }();
+   </script>

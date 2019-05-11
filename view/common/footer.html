@@ -1,23 +1,494 @@
-    <!-- footer -->
-    <footer>
-        <p class="my-2 text-center">COPYRIGHT (&copy;) 2019 mo005_8020 - 企业类网站.</p>
-    </footer>
+   <!-- footer -->
+   <footer>
+      <p class="my-2 text-center">COPYRIGHT (&copy;) 2019 mo005_8020 - 企业类网站.</p>
+   </footer>
 
-    <!-- sidebar -->
-    <aside class="sidebar">
-        <a class="btn_feedback position-fixed text-center border bg-white" href="javascript:;"></a>
-        <a class="btn_player position-fixed text-center border bg-white" href="javascript:;"></a>
-        <a class="btn_top position-fixed text-center border bg-white" href="javascript:;"></a>
-        <div class="w-100 h-100 d-none">
-            <i class="bg-dark w-100 h-100  position-fixed"></i>
-            <div class="p-3 position-fixed bg-white">
-                <img class="" src="<?php echo _IMG_ ?>icon2.png" alt="">
-                <p class="mb-n2 mt-2 text-center">扫描二维码分享到微信</p>
+   <!-- sidebar -->
+   <aside class="sidebar">
+      <a class="btn_feedback position-fixed text-center border bg-white" href="javascript:;"></a>
+      <a class="btn_player position-fixed text-center border bg-white" href="javascript:;"></a>
+      <a class="btn_top position-fixed text-center border bg-white" href="javascript:;"></a>
+      <div class="w-100 h-100 d-none">
+         <i class="bg-dark w-100 h-100 position-fixed"></i>
+         <div class="p-3 position-fixed bg-white">
+            <img class="" src="<?php echo _IMG_ ?>icon2.png" alt="">
+            <p class="mb-n2 mt-2 text-center">扫描二维码分享到微信</p>
+         </div>
+      </div>
+   </aside>
+
+   <!-- 弹出 登录/注册 -->
+   <div id="tcc" class="w-100 h-100 fixed-top" style="background: rgba(0, 0, 0, 0.6); display: none;">
+      <div id="_start" class="mx-auto mt-4 p-3 bg-light" style="height: 600px; width: 430px;">
+         <div id="_close" class="text-break" style="height: 30px; width: 30px; display: block;">
+            <span class="glyphicon glyphicon-remove">X</span>
+         </div>
+         <div id="login_container" style="display: block;">
+            <div id="lab1">
+               <span id="lab_login">会员登录</span>
+               <span id="lab_toRegist">
+                   还没有账号&nbsp;
+                  <span id="toRegist" style="color: #EB9316;cursor: pointer;">立即注册</span>
+               </span>
             </div>
-        </div>
-    </aside>
+            <div style="width:330px;">
+               <span id="lab_type1">手机号/账号登陆</span>
+            </div>
+            <div id="form_container1">
+               <br>
+               <div class="input-group-lg d-flex my-1 mw-100 flex-column position-relative">
+                  <input type="text" class="form-control" placeholder="手机号/用户名" id="login_number" value="">
+               </div>
+               <div class="input-group-lg d-flex my-1 mw-100 flex-column position-relative">
+                  <input type="password" class="form-control" placeholder="密码" id="login_password">
+               </div>
+               <input type="button" value="登录" class="btn btn-success" id="login_btn">
+               <span id="rememberOrfindPwd">
+                  <span>
+                     <input id="remember" type="checkbox" style="margin-bottom: -1.5px;">
+                  </span>
+                  <span style="color:#000000">
+                     记住密码    
+                  </span>
+                  <span style="color:#000000">
+                     忘记密码
+                  </span>
+               </span>
+            </div>
+         </div>
 
-    <!-- js -->
-    <script type="text/javascript" src="<?php echo _JS_ ?>main.js"></script>
-</body>
-</html>
+         <!-- 注册 -->
+         <div class="tab-content .dn" id="myTabContent">
+            <div class="tab-pane show active" id="home" aria-labelledby="home-tab">
+               <!-- <h1>欢迎注册</h1> -->
+               <div id="lab1">
+                  <span id="lab_login">会员注册</span>
+                  <span id="lab_toLogin">
+                      已有账号&nbsp;
+                     <span id="toLogin" style="color: #EB9316;cursor: pointer;">立即登录</span>
+                  </span>
+               </div>
+               <form class="d-flex flex-column m-auto" style="width: 380px;">
+                  <!-- 昵称 -->
+                  <div class="input-group-lg d-flex my-1 mw-100 flex-column position-relative">
+                     <input type="text" class="form-control" name="user" placeholder="昵称" minlength="3"
+                        maxlength="16">
+                     <i class="dn ImgFr fas fa-check text-success position-absolute"></i>
+                     <div class="dn text-danger"><i class="fas fa-exclamation-circle text-danger"></i>&nbsp;昵称不可以为空
+                     </div>
+                  </div>
+                  <!-- 密码 -->
+                  <div class="input-group-lg d-flex my-1 mw-100 flex-column position-relative">
+                     <input type="password" class="form-control" name="password" placeholder="密码" minlength="8"
+                        maxlength="16">
+                     <div class="dn ImgFr position-absolute">
+                        <i class="FToggle fas fa-eye text-secondary mr-3 dn"></i>
+                        <i class="FToggle fas fa-eye-slash text-secondary mr-3"></i>
+                        <i class="dn fas fa-check text-success"></i>
+                     </div>
+                     <div class="dn text-danger">
+                        <i class="fas fa-exclamation-circle text-danger"></i>
+                        &nbsp;密码不能为空
+                     </div>
+                     <div class="dn">
+                        <div>
+                           <i class="dn fas fa-exclamation-circle text-info"></i>
+                           <i class="fas fa-check-circle text-success"></i>
+                           &nbsp;不能包括空格
+                        </div>
+                        <div>
+                           <i class="fas fa-exclamation-circle text-info"></i>
+                           <i class="dn fas fa-check-circle text-success"></i>
+                           &nbsp;长度为8-16个字符
+                        </div>
+                        <div>
+                           <i class="fas fa-exclamation-circle text-info"></i>
+                           <i class="dn fas fa-check-circle text-success"></i>
+                           &nbsp;必须包含字母、数字、符号中至少2种
+                        </div>
+                     </div>
+                  </div>
+                  <div class="input-group-lg d-flex my-1 mw-100 flex-column position-relative">
+                     <input type="password" class="form-control" name="repassword" placeholder="确认密码" minlength="8"
+                        maxlength="16">
+                     <div class="dn ImgFr position-absolute">
+                        <i class="FToggle fas fa-eye text-secondary mr-3 dn"></i>
+                        <i class="FToggle fas fa-eye-slash text-secondary mr-3"></i>
+                        <i class="dn fas fa-check text-success"></i>
+                     </div>
+                  </div>
+                  <!-- 手机号 -->
+                  <div class="my-1 call">
+                     <div class="input-group-lg mw-100 d-flex justify-content-between position-relative">
+                        <input class="form-control" style="width: 33%;" type="text" value="+86" maxlength="5">
+                        <i class="FToggle2 ImgFr2 fas fa-caret-down position-absolute text-black-50"></i>
+                        <i class="FToggle2 ImgFr2 fas fa-caret-up position-absolute text-black-50 dn"></i>
+                        <input class="form-control" style="width: 64%;" type="text" placeholder="手机号码"
+                           minlength="11" maxlength="11">
+                        <i class="dn ImgFr fas fa-check text-success position-absolute"></i>
+                     </div>
+                     <div class="">
+                        <span class="text-danger dn"><i class="fas fa-exclamation-circle"></i>&nbsp;请填写手机号</span>
+                        <span class="text-secondary">可通过该手机号找回密码</span>
+                     </div>
+                  </div>
+                  <!-- 验证码 -->
+                  <div class="dn my-1 pb-2">
+                     <div class="input-group-lg d-flex justify-content-between">
+                        <input class="form-control" style="width: 33%;" type="text" name="sm_verification"
+                           id="sm_verification" placeholder="短信验证码" minlength="4" maxlength="6">
+                        <button class="btn btn-primary disabled" name="yzm" onclick="return false"
+                           style="width: 64%; font-size: 1.25rem;">发送短信验证码</button>
+                     </div>
+                  </div>
+                  <!-- 注册 -->
+                  <div class="my-2">
+                     <button id="regist_btn" class="btn btn-primary p-2 w-100" name="zc" onclick="return false"
+                        style="font-size: 1.25rem;">立即注册</button>
+                  </div>
+                  <div class="">
+                     <div class="FToggle3">
+                        <span class="text-secondary btn p-0 align-top">
+                           <i class="far fa-square text-black-50"></i>
+                           <i class="far fa-check-square text-black-50 dn"></i>
+                           我已阅读并同意相关服务条款和隐私政策
+                        </span>
+                        <i class="fas fa-caret-down text-black-50"></i>
+                        <i class="fas fa-caret-up text-black-50 dn"></i>
+                     </div>
+                     <div class="pl-3 dn">
+                        <a class="text-decoration-none d-block" href="javascript:;">《用户号码规则》</a>
+                        <a class="text-decoration-none d-block" href="javascript:;">《隐私政策》</a>
+                        <a class="text-decoration-none d-block" href="javascript:;">《网站服务协议》</a>
+                     </div>
+                  </div>
+               </form>
+            </div>
+            <div class="tab-pane" id="profile" aria-labelledby="profile-tab">
+               <form class="d-flex justify-content-center">123</form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- ajax -->
+   <script>
+      if ($.cookie('islog') == '666' && $.cookie('username')) {
+         // 登录状态
+         $('#Login_start_, #Regist_start_').addClass('d-none');
+         $('#User').text($.cookie('username')).removeClass('d-none');
+         $('#exit').removeClass('d-none');
+      }
+
+      // 登录提交
+      $('#login_btn').click(function () {
+         // 获取表单值
+         let username = $('#login_number').val();
+         let password = $('#login_password').val();
+         let TF = username!='' && password!='';
+
+         // ajax 验证用户名、密码
+         if(TF) {
+            $.post('login.php', {
+               username: username,
+               password: password
+            }, function (result) {
+               if (result == 1) {
+                  // 登录成功
+                  $('#login').css('display', 'none');
+                  $('#Login_start_, #Regist_start_').addClass('d-none');
+                  $('#User').text(username).removeClass('d-none');
+                  $('#exit').removeClass('d-none');
+
+                  // 关闭遮罩层
+                  $("#_close").trigger('click');
+               } else {
+                  alert('用户名或密码错误！');
+               }
+            });
+         }
+      });
+
+      // 用户名
+      $('#regist_account').blur(function () {
+         var username = $(this).val();
+         $.get('username.php', {
+            username: username
+         }, function (result) {
+            if (result == 1) {
+               $('#regist_account+.tip').text('√').css({
+                  color: 'green',
+                  fontWeight: '900'
+               });
+            } else {
+               $('#regist_account+.tip').text('× 用户名已被占用！').css({
+                  color: 'red',
+                  fontWeight: '900'
+               });
+            }
+         })
+      }).focus(function () {
+         $('#regist_account+.tip').text('');
+      })
+
+      // 注册
+      $('#regist_btn').click(function () {
+         // 获取表单值
+         let username = $("#myTabContent form input[name='user']").val();
+         let password = $("#myTabContent form input[name='password']").val();
+         let repassword = $("#myTabContent form input[name='repassword']").val();
+         let phone = $("#myTabContent .call input[minlength='11']").val();
+         let TF = username!='' && password!='' && repassword!='' && password==repassword && phone!='';
+
+         // ajax 提交用户名、密码
+         if(TF) {
+            $.post('register.php', {
+               username: username,
+               password: password,
+               phone: phone
+            }, function (result) {
+               console.log(result);
+               if (result == 1) {
+                  // 登录成功
+                  $('#login').css('display', 'none');
+                  $('#Login_start_, #Regist_start_').addClass('d-none');
+                  $('#User').text(username).removeClass('d-none');
+                  $('#exit').removeClass('d-none');
+
+                  // 关闭遮罩层
+                  $("#_close").trigger('click');
+               } else {
+                  alert('用户名或格式错误！');
+               }
+            });
+         }
+      })
+   </script>
+
+
+   <!-- 注册 -->
+   <script type="text/javascript">
+      const OIE = '<i class="fas fa-exclamation-circle text-danger"></i>';
+      const OUs = $("#myTabContent form input[name='user']");
+      const OUYes = $(OUs.next());
+      const OUError = $(OUYes.next());
+      const Opw = $("#myTabContent form input[name='password']");
+      const OPImg = $(Opw.next());
+      const OPYes = $(OPImg.children().last());
+      const OPError = $(OPImg.next());
+      const OPError2 = $(OPError.next());
+      const OPError3 = $(OPError2.children().children());
+
+      const Obtn = $("#myTabContent form button[name='yzm']")
+      const Obtn0 = $("#myTabContent form button[name='zc']")
+
+      // const OCInp = $(".call input");
+      const OCall = $("#myTabContent .call input[minlength='11']");
+      const OCN = $("#myTabContent .call+div");
+      const OCTD = $("#myTabContent .call .text-danger");
+      const OCTS = $("#myTabContent .call .text-secondary");
+
+      const OToggle = $("#myTabContent form .FToggle");
+      const OToggle1 = $("#myTabContent form .FToggle2");
+      const OToggle2 = $("#myTabContent form .FToggle3>span");
+      const OToggle21 = $(OToggle2.children());
+      const OToggle3 = $("#myTabContent form .FToggle3>i");
+      const OToggleTk = $("#myTabContent form .FToggle3+div");
+
+
+
+      // 选项卡hover
+      $('#myTabContent #myTab a').hover(function (event) {
+         event.preventDefault();
+         $(this).tab('show');
+      });
+
+      // 登录验证
+      // 用户
+      OUs.focus(function () {
+         OUError.stop().slideUp(300);
+         OUYes.stop().slideUp(300);
+      });
+      OUs.blur(function () {
+         var value = $(this).val();
+         const REus = /^[\u4e00-\u9fa5\w_]+$/g;
+         // var VE = $(i_error[0]).css("display")=="none";
+         if (value == "") {
+            OUError.stop().html(OIE + "&nbsp;昵称不能为空").show().effect("bounce", 500);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         } else if (/\s+$/g.exec(value)) {
+            OUError.stop().html(OIE + "&nbsp;不能包括空格").show().effect("bounce", 500);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         } else if (!/^.{3,16}$/g.exec(value)) {
+            OUError.stop().html(OIE + "&nbsp;长度为3-16个字符").show().effect("bounce", 500);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         } else if (REus.exec(value)) {
+            OUYes.stop().slideDown(300);
+            OUError.stop().slideUp(300);
+            $(this).removeClass("border-danger");
+         } else {
+            OUError.stop().html(OIE + "&nbsp;昵称非法").show().effect("bounce", 500);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         };
+      });
+
+      // 密码
+      Opw.focus(function () {
+         OPError.stop().slideUp(300);
+         OPError2.stop().slideDown(300);
+         OPYes.stop().slideUp(300);
+      });
+      Opw.bind('input propertychange', function () {
+         const value = $(this).val();
+         // console.log(value);
+         const REus = /(?!^\d+$)(?!^[A-za-z]+$)(?!^_+$)(?!^[\W]+$)^[\S]+$/g;
+         value ? OPImg.stop().slideDown(300) : OPImg.stop().slideUp(300);
+         if (/\s+/g.exec(value)) {
+            /* 有空格时 */
+            $(OPError3[0]).stop()
+               .slideDown(300)
+               .next()
+               .slideUp(0);
+         } else {
+            $(OPError3[0]).stop()
+               .slideUp(0)
+               .next()
+               .slideDown(300);
+         }
+         if (!/^.{8,16}$/g.exec(value)) {
+            $(OPError3[2]).stop()
+               .slideDown(300)
+               .next()
+               .slideUp(0);
+         } else {
+            $(OPError3[2]).stop()
+               .slideUp(0)
+               .next()
+               .slideDown(300);
+         }
+         if (!REus.exec(value)) {
+            $(OPError3[4]).stop()
+               .slideDown(300)
+               .next()
+               .slideUp(0);
+         } else {
+            $(OPError3[4]).stop()
+               .slideUp(0)
+               .next()
+               .slideDown(300);
+         }
+      })
+      Opw.blur(function () {
+         const value = $(this).val();
+         // const REus = /^([0-9]+[A-z]+|[A-z]+[0-9]+)[0-9A-z]*$/g;
+         const REus = /(?!^\d+$)(?!^[A-za-z]+$)(?!^_+$)(?!^[\W]+$)^[\S]{8,16}$/g;
+         // var VE = $(i_error[1]).css("display")=="none";
+         OPError2.slideUp(300);
+         if (value == "") {
+            OPError.stop().html(OIE + "&nbsp;密码不能为空").show().effect("bounce", 500);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         } else if (/\s+/g.exec(value)) {
+            OPError.stop().html(OIE + "&nbsp;不能包括空格").show().effect("bounce", 500);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         } else if (!/^.{8,16}$/g.exec(value)) {
+            OPError.stop().html(OIE + "&nbsp;长度为8-16个字符").show().effect("bounce", 500);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         } else if (!REus.exec(value)) {
+            OPError.stop().html(OIE + "&nbsp;必须包含字母、数字、符号中至少2种").show().effect("bounce", 500);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         } else /*  if(REus.exec(value)) */ {
+            OPError.stop().slideUp(300);
+            OPYes.stop().slideDown(300);
+            $(this).removeClass("border-danger");
+         };
+      });
+      /* toggle眼 */
+      OToggle.mousedown(function () {
+         const OType = Opw.attr("type");
+         $(this).stop()
+            .fadeOut(0)
+            .siblings(".FToggle")
+            .fadeIn(300);
+         Opw.attr("type", "");
+      }).mouseup(function () {
+         $(this).stop()
+            .fadeOut(0)
+            .siblings(".FToggle")
+            .fadeIn(300);
+         Opw.attr("type", "password");
+      })
+
+
+      // 手机验证
+      /* 地区 */
+      OToggle1.click(function () {
+         $(this).stop()
+            .fadeOut(0)
+            .siblings(".FToggle2")
+            .fadeIn(300);
+         // $(OToggleTk).stop()
+         //     .toggle(300)
+      })
+      /* 号码 */
+      OCall.focus(function () {
+         OCN.stop().slideDown(300);
+         OCTS.stop().slideDown(300);
+         OCTD.stop().slideUp(0);
+         OToggle1.siblings().last().slideUp(300);
+         Obtn.addClass("disabled");
+      });
+      OCall.blur(function () {
+         const value = $(this).val();
+         const REus = /^(13[0-9]|14[5|7]|15[0-35-9]|18[0-35-9])\d{8}$/g;
+         if (value == "") {
+            OCN.stop().slideUp(300);
+            OCTD.stop().html(OIE + "&nbsp;请填写手机号").show().effect("bounce", 500);
+            OCTS.stop().slideUp(0);
+            $(this).stop().addClass("border-danger").effect("shake", 300);
+         } else if (!/^\d{11}$/g.exec(value)) {
+            OCTD.stop().html(OIE + "&nbsp;手机号数错误").show().effect("bounce", 500);
+            OCTS.stop().slideUp(0);
+            $(this).stop().effect("shake", 300);
+         } else if (!REus.exec(value)) {
+            OCTD.stop().html(OIE + "&nbsp;手机号格式错误").show().effect("bounce", 500);
+            OCTS.stop().slideUp(0);
+            $(this).stop().effect("shake", 300);
+         } else {
+            OCTS.stop().slideDown(300);
+            OCTD.stop().slideUp(0);
+            $(this).removeClass("border-danger");
+            OToggle1.siblings().last().slideDown(300);
+            Obtn.removeClass("disabled");
+         }
+      });
+
+
+      // 阅读与否
+      OToggle21.click(function (event) {
+         event.stopPropagation();
+         $(this).stop()
+            .fadeOut(0)
+            .siblings()
+            .fadeIn(300);
+      })
+      OToggle2.click(function (event) {
+         // event.stopPropagation();
+         $(OToggle21).stop().toggle();
+      })
+
+      // 条款
+      OToggle3.click(function () {
+         $(this).stop()
+            .fadeOut(0)
+            .siblings()
+            .fadeIn(300);
+         $(OToggleTk).stop()
+            .toggle(300);
+      })
+   </script>
+
+   <!-- js -->
+   <script type="text/javascript" src="<?php echo _JS_ ?>main.js"></script>
+   </body>
+
+   </html>

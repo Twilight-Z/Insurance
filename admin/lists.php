@@ -42,8 +42,7 @@ $sql = "SELECT * FROM i_{$lists}
       LIMIT {$start},{$limit}";
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
-$interface = $lists;
-$$interface = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$$lists = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 include('./view/'.$lists.'.html');
